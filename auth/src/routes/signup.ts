@@ -15,12 +15,12 @@ router.post('/api/users/signup', [
   const errors = validationResult(req);
 
   if(!errors.isEmpty()) {
-    res.status(400).send(errors.array());
+    return res.status(400).send(errors.array());
   }
 
   console.log('Creating a user...');
 
-  res.send({});
+  return res.send({});
 });
 
 export { router as signupRouter }
